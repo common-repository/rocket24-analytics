@@ -1,0 +1,23 @@
+<script>
+	jQuery(function() {
+		jQuery('.ranalytics-track-from').select2();
+	})
+</script>
+<br>
+	<form action="options.php" method="post">
+		{{markup|raw}}
+		<label for="shouldTrack">Enable google analytics?</label>
+		<select name="ranalytics-enabled" id="shouldTrack">
+			<option value="true" {{ enabled ? "selected" : "" }}>Yes</option>
+			<option value="false" {{ enabled ? "" : "selected" }}>No</option>
+		</select>
+		<br>
+		<br>
+		<label for="shouldTrackFourofour">Track 404 not found pages?</label>
+		<select name="ranalytics-track-fourofour" id="shouldTrackFourofour">
+			<option value="true" {{ trackfor ? "selected" : "" }}>Yes</option>
+			<option value="false" {{ trackfor ? "" : "selected" }}>No</option>
+		</select>
+		{{ selectMenu|raw }} <br><br>
+		<input type="submit" value="Save settings." class='button button-primary'>
+	</form>
